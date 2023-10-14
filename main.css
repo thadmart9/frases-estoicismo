@@ -39,7 +39,8 @@ body {
 #quote {
     margin-top: 80px;
     margin-bottom: 16px;
-    font-size: 40px;
+    font-size: 32px;
+    min-height: 350px;
 }
 
 #author {
