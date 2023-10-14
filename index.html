@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title"><h1>ESTOICISMO</h1></div>
+        <div class="quote-content">
+            <p id="quote">"La felicidad de tu vida depende de la calidad de tus pensamientos."</p>
+            <p id="author">- Marco Aurelio</p>
+        </div>
+
+        <button>
+            <span>Ver otra frase</span>
+            <svg viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.8444 7.05932L9.10948 11.7943C8.96123 11.9425 8.76016 12.0258 8.5505 12.0258C8.34084 12.0258 8.13976 11.9425 7.99151 11.7943C7.84326 11.646 7.75997 11.445 7.75997 11.2353C7.75997 11.0256 7.84326 10.8246 7.99151 10.6763L11.379 7.29015H1.71177C1.50247 7.29015 1.30174 7.207 1.15375 7.05901C1.00575 6.91101 0.922607 6.71028 0.922607 6.50099C0.922607 6.29169 1.00575 6.09096 1.15375 5.94297C1.30174 5.79497 1.50247 5.71183 1.71177 5.71183H11.379L7.99282 2.3237C7.84457 2.17545 7.76128 1.97437 7.76128 1.76471C7.76128 1.55505 7.84457 1.35398 7.99282 1.20572C8.14108 1.05747 8.34215 0.974182 8.55181 0.974182C8.76147 0.974182 8.96255 1.05747 9.1108 1.20572L13.8458 5.94068C13.9193 6.0141 13.9777 6.10132 14.0175 6.19736C14.0573 6.29339 14.0777 6.39633 14.0775 6.50027C14.0774 6.60422 14.0568 6.70711 14.0168 6.80305C13.9768 6.89899 13.9182 6.98608 13.8444 7.05932Z" fill="white"/>
+             </svg>    
+        </button>
+    </div>
+
+    <script>
+        const quotes = [
+    { quote: '"No puedes controlar todo lo que sucede, pero puedes controlar la forma en que respondes."', author: " Epícteto" },
+    { quote: '"La clave está en recordar que nuestro poder siempre está en el presente momento."', author: " Epícteto" },
+    { quote: '"No puedes controlar todo lo que sucede, pero puedes controlar la forma en que respondes."', author: " Séneca" },
+    { quote: '"No esperes que los eventos ocurran como tú deseas. Decide desear que ocurran como ocurren, y tendrás una vida tranquila."', author: " Epícteto" },
+    { quote: '"La verdadera felicidad es disfrutar el presente, sin dependencia ansiosa sobre el futuro."', author: " Séneca" },
+    { quote: '"No es porque las cosas son difíciles que no nos atrevemos; es porque no nos atrevemos que son difíciles."', author: " Séneca" },
+    { quote: '"El hombre que se despoja de la razón es como un barco que se ha quedado sin timón."', author: " Marco Aurelio" },
+    { quote: '"Lo que no depende de nosotros, no es nada de nuestra preocupación."', author: " Epícteto" },
+    { quote: '"Elige no ser herido, y no lo serás. No sientas y no sentirás ningún mal."', author: " Marco Aurelio" },
+    { quote: '"No vivimos para nosotros mismos solos. Nuestra vida es de algún modo para el bien de la comunidad."', author: " Séneca" },
+    // ... and so on for all your quotes
+];
+
+const title = document.getElementById('quote');
+const author = document.getElementById('author');
+const button = document.querySelector('button');
+let currentIndex = 0;
+
+button.addEventListener('click', changeQuote);
+
+function changeQuote() {
+    // Check if we've reached the end of the quotes, and loop back to the first quote.
+    if (currentIndex === quotes.length - 1) {
+        currentIndex = 0;
+    } else {
+        currentIndex++;
+    }
+
+    title.innerText = quotes[currentIndex].quote;
+    author.innerText = "-" + quotes[currentIndex].author;
+}
+
+    </script>
+</body>
+</html>
